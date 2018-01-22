@@ -4,7 +4,7 @@ ContinuousDrive::ContinuousDrive() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(DriveTrain);
-	stick = oi->GetDriveJoy;
+	stick = oi->GetDriveJoy();
 }
 
 // Called just before this Command runs the first time

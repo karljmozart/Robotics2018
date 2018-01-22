@@ -1,6 +1,6 @@
 #include "DriveMotors.h"
 #include "../RobotMap.h"
-
+#include "Commands/ContinuousDrive.h"
 DriveMotors::DriveMotors() : Subsystem("DriveMotors") {
 	leftBack = new Talon(LEFTBACK);
 	leftFront = new Talon(LEFTFRONT);

@@ -1,8 +1,8 @@
 #ifndef ContinuousDrive_H
 #define ContinuousDrive_H
 
-#include <CommandBase.h>
-
+#include "../CommandBase.h"
+#include "WPILib.h"
 class ContinuousDrive : public CommandBase {
 public:
 	Joystick *stick;

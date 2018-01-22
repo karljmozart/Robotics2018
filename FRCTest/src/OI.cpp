@@ -8,6 +8,7 @@
 #include "OI.h"
 
 #include <WPILib.h>
+#include "Commands/ContinuousDrive.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -25,7 +26,9 @@ OI::OI() {
 	b10 = new JoystickButton(driveJoy, 10);
 	b11 = new JoystickButton(driveJoy, 11);
 	b12 = new JoystickButton(driveJoy, 12);
+
+	//b1->WhileHeld(new ContinuousDrive());
 }
 Joystick *OI::GetDriveJoy(){
-	return driveJoy
+	return driveJoy;
 }
