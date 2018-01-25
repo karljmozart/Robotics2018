@@ -12,6 +12,8 @@ DriveMotors::DriveMotors() : Subsystem("DriveMotors") {
 void DriveMotors::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
+	ContinuousDrive *c = new ContinuousDrive();
+	SetDefaultCommand(c);
 }
 
 void DriveMotors::DriveForward(){

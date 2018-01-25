@@ -6,6 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 #include <Commands/Command.h>
+#include <memory>
+#include "Subsystems/DriveMotors.h"
 #include <Commands/Scheduler.h>
 #include <LiveWindow/LiveWindow.h>
 #include <IterativeRobot.h>
