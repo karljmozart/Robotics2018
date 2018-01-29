@@ -7,6 +7,7 @@
 
 #include "Commands/Command.h"
 #include "Subsystems/DriveMotors.h"
+#include "Subsystems/ClimbSystem.h"
 #include "WPILib.h"
 #include "OI.h"
 
@@ -27,7 +28,7 @@ public:
 	//create instances here *static*
 	static OI *oi;
 	static DriveMotors *DriveTrain;
-
+	static ClimbSystem *ClimbSys;
 
 };
 

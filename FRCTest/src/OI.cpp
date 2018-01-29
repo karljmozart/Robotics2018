@@ -10,7 +10,8 @@
 #include <WPILib.h>
 #include "Commands/ContinuousDrive.h"
 #include "Commands/Forward.h"
-
+#include "Commands/ClimbUp.h"
+#include "Commands/ClimbDown.h"
 OI::OI() {
 	// Process operator interface input here.
 	driveJoy= new Joystick(1);
@@ -29,6 +30,10 @@ OI::OI() {
 	b12 = new JoystickButton(driveJoy, 12);
 
 	b1->WhileHeld(new Forward());
+	b3->WhileHeld(new ClimbUp());
+	b4->WhileHeld(new ClimbDown());
+
+
 }
 Joystick *OI::GetDriveJoy(){
 	return driveJoy;
