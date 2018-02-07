@@ -25,6 +25,9 @@ public:
 
 	static void init();
 
+	std::shared_ptr<NetworkTable> table = NetworkTable::GetTable("limelight");
+	float targetOffsetAngle_Horizontal = table->GetNumber("tx", 0);
+
 	//create instances here *static*
 	static OI *oi;
 	static DriveMotors *DriveTrain;

@@ -12,6 +12,9 @@
 #include "Commands/Forward.h"
 #include "Commands/ClimbUp.h"
 #include "Commands/ClimbDown.h"
+#include "Commands/limelight.h"
+#include "Commands/AutoDrive.h"
+
 OI::OI() {
 	// Process operator interface input here.
 	driveJoy= new Joystick(1);
@@ -32,7 +35,10 @@ OI::OI() {
 	b1->WhileHeld(new Forward());
 	b3->WhileHeld(new ClimbUp());
 	b4->WhileHeld(new ClimbDown());
+	b2->WhileHeld(new AutoDrive());
 
+	b5->WhileHeld(new limeLog());
+	b6->WhileHeld(new limeLog());
 
 }
 Joystick *OI::GetDriveJoy(){
