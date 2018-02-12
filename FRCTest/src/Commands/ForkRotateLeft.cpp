@@ -1,33 +1,33 @@
-#include "AutoDrive.h"
-#include "limelight.h"
+#include "ForkRotateLeft.h"
 
-AutoDrive::AutoDrive() {
+ForkRotateLeft::ForkRotateLeft() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
+	Requires(Rotation);
 }
 
 // Called just before this Command runs the first time
-void AutoDrive::Initialize() {
-	limelighttable->PutNumber("ledMode", 0);
+void ForkRotateLeft::Initialize() {
+	Rotation->Stop();
 }
 
 // Called repeatedly when this Command is scheduled to run
-void AutoDrive::Execute() {
-	limelighttable->PutNumber("ledMode", 1);
+void ForkRotateLeft::Execute() {
+	Rotation->RotateLeft();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool AutoDrive::IsFinished() {
+bool ForkRotateLeft::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void AutoDrive::End() {
-	limelighttable->PutNumber("ledMode", 0);
+void ForkRotateLeft::End() {
+	Rotation->Stop();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void AutoDrive::Interrupted() {
-
+void ForkRotateLeft::Interrupted() {
+	End();
 }

@@ -3,6 +3,7 @@
 #include <Commands/Scheduler.h>
 #include "Subsystems/DriveMotors.h"
 #include "Subsystems/ClimbSystem.h"
+#include "Subsystems/RotateMotor.h"
 
 
 
@@ -13,6 +14,7 @@
 OI* CommandBase::oi = new OI();
 DriveMotors* CommandBase::DriveTrain;
 ClimbSystem* CommandBase::ClimbSys;
+RotateMotor* CommandBase::Rotation;
 
 //functions
 
@@ -29,5 +31,6 @@ void CommandBase::init() {
 	oi = new OI();
 	DriveTrain = new DriveMotors();
 	ClimbSys = new ClimbSystem();
+	Rotation = new RotateMotor();
 
 }

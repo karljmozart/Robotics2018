@@ -22,6 +22,7 @@ const int LEFTFRONT = 1;
 const int LEFTBACK = 1;
 const int RIGHTFRONT = 0;
 const int RIGHTBACK = 0;
+const int FORKROTATE = 2;
 // For example to map the left and right motors, you could define the
 // following variables to use with your drivetrain subsystem.
 // constexpr int kLeftMotor = 1;

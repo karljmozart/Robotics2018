@@ -14,6 +14,8 @@
 #include "Commands/ClimbDown.h"
 #include "Commands/limelight.h"
 #include "Commands/AutoDrive.h"
+#include "Commands/ForkRotateLeft.h"
+#include "Commands/ForkRotateRight.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -37,8 +39,8 @@ OI::OI() {
 	b4->WhileHeld(new ClimbDown());
 	b2->WhileHeld(new AutoDrive());
 
-	b5->WhileHeld(new limeLog());
-	b6->WhileHeld(new limeLog());
+	b5->WhileHeld(new ForkRotateLeft());
+	b6->WhileHeld(new ForkRotateRight());
 
 }
 Joystick *OI::GetDriveJoy(){
