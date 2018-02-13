@@ -16,7 +16,7 @@
 #include <TimedRobot.h>
 #include "CommandBase.h"
 #include "WPILib.h"
-#include <Commands/AutoDrive.h>
+#include "Commands/AutoBlue.h"
 
 class Robot : public frc::TimedRobot {
 public:
@@ -95,7 +95,7 @@ private:
 	Command *autonomousCommand;
 	frc::Command* m_autonomousCommand = nullptr;
 	//ExampleCommand m_defaultAuto;
-	AutoDrive m_myAuto;
+	AutoBlue m_myAuto;
 	frc::SendableChooser<frc::Command*> m_chooser;
 };
 

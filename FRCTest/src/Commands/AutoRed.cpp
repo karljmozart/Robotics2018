@@ -1,33 +1,43 @@
-#include "AutoDrive.h"
-#include "limelight.h"
+#include "AutoRed.h"
 
-AutoDrive::AutoDrive() {
+limeRed::limeRed(){
+	limelighttable = NetworkTable::GetTable("limelight");
+}
+
+void limeRed::ledOn(){
+	limelighttable->PutNumber("ledMode", 0);
+}
+
+AutoRed::AutoRed() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
+	red1 = new limeRed();
 }
 
 // Called just before this Command runs the first time
-void AutoDrive::Initialize() {
-	limelighttable->PutNumber("ledMode", 0);
+void AutoRed::Initialize() {
+
 }
 
 // Called repeatedly when this Command is scheduled to run
-void AutoDrive::Execute() {
-	limelighttable->PutNumber("ledMode", 1);
+void AutoRed::Execute() {
+	limeRed* newInstance = new limeRed();
+	newInstance->ledOn();
+	delete newInstance;
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool AutoDrive::IsFinished() {
-	return false;
+bool AutoRed::IsFinished() {
+	return true;
 }
 
 // Called once after isFinished returns true
-void AutoDrive::End() {
-	limelighttable->PutNumber("ledMode", 0);
+void AutoRed::End() {
+
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void AutoDrive::Interrupted() {
+void AutoRed::Interrupted() {
 
 }

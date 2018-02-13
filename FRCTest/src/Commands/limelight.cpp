@@ -15,10 +15,15 @@ limelightData::limelightData(){
 }
 
 void limelightData::log_all(){
+	/*
 	std::cout<<"Target Offset Angle Horizontal: "<<targetOffsetAngle_Horizontal<<std::endl;
 	std::cout<<"Target Offset Angle Vertical: "<<targetOffsetAngle_Vertical<<std::endl;
 	std::cout<<"Target Area: "<<targetArea<<std::endl;
 	std::cout<<"Target Skew: "<<targetSkew<<std::endl;
+	*/
+	limelighttable->PutNumber("ledMode", 1);
+	float entry = limelighttable->GetNumber("ledMode", 2);
+	std::cout<<"Led Value: "<<entry<<std::endl;
 }
 
 limeLog::limeLog() {

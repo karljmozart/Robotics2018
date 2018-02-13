@@ -4,6 +4,7 @@
 #include "Subsystems/DriveMotors.h"
 #include "Subsystems/ClimbSystem.h"
 #include "Subsystems/RotateMotor.h"
+#include "Subsystems/GrabberWheels.h"
 
 
 
@@ -15,6 +16,7 @@ OI* CommandBase::oi = new OI();
 DriveMotors* CommandBase::DriveTrain;
 ClimbSystem* CommandBase::ClimbSys;
 RotateMotor* CommandBase::Rotation;
+GrabberWheels* CommandBase::Grabber;
 
 //functions
 
@@ -32,5 +34,6 @@ void CommandBase::init() {
 	DriveTrain = new DriveMotors();
 	ClimbSys = new ClimbSystem();
 	Rotation = new RotateMotor();
+	Grabber = new GrabberWheels();
 
 }

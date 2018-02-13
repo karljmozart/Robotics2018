@@ -1,18 +1,23 @@
-#ifndef AutoDrive_H
-#define AutoDrive_H
+#ifndef AutoRed_H
+#define AutoRed_H
 
 #include "../CommandBase.h"
-#include "limelight.h"
-class AutoDrive : public CommandBase {
-private:
+
+struct limeRed {
+	limeRed();
 	std::shared_ptr<NetworkTable> limelighttable;
+	void ledOn();
+};
+
+class AutoRed : public CommandBase {
 public:
-	AutoDrive();
+	AutoRed();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
+	limeRed* red1;
 };
 
-#endif  // AutoDrive_H
+#endif  // AutoRed_H

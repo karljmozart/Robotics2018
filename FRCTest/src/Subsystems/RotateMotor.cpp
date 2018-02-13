@@ -1,5 +1,6 @@
 #include "RotateMotor.h"
 #include "../RobotMap.h"
+#include "WPILib.h"
 
 
 RotateMotor::RotateMotor() : Subsystem("RotateMotor") {

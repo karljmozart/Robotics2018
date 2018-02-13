@@ -9,6 +9,7 @@
 #include "Subsystems/DriveMotors.h"
 #include "Subsystems/ClimbSystem.h"
 #include "Subsystems/RotateMotor.h"
+#include "Subsystems/GrabberWheels.h"
 #include "WPILib.h"
 #include "OI.h"
 
@@ -33,6 +34,7 @@ public:
 	static DriveMotors *DriveTrain;
 	static ClimbSystem *ClimbSys;
 	static RotateMotor *Rotation;
+	static GrabberWheels *Grabber;
 
 };
 

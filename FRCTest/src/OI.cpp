@@ -13,13 +13,17 @@
 #include "Commands/ClimbUp.h"
 #include "Commands/ClimbDown.h"
 #include "Commands/limelight.h"
-#include "Commands/AutoDrive.h"
 #include "Commands/ForkRotateLeft.h"
 #include "Commands/ForkRotateRight.h"
+#include "Commands/AutoBlue.h"
+#include "Commands/AutoRed.h"
+#include "Commands/PushCrateOut.h"
+#include "Commands/PullCrateIn.h"
 
 OI::OI() {
 	// Process operator interface input here.
 	driveJoy= new Joystick(1);
+	xbox = new Joystick(2);
  //joystick buttons
 	b1 = new JoystickButton(driveJoy, 1);
 	b2 = new JoystickButton(driveJoy, 2);
@@ -34,15 +38,27 @@ OI::OI() {
 	b11 = new JoystickButton(driveJoy, 11);
 	b12 = new JoystickButton(driveJoy, 12);
 
-	b1->WhileHeld(new Forward());
-	b3->WhileHeld(new ClimbUp());
-	b4->WhileHeld(new ClimbDown());
-	b2->WhileHeld(new AutoDrive());
+	A = new JoystickButton(xbox, 1);
+	B = new JoystickButton(xbox, 2);
+	X = new JoystickButton(xbox, 3);
+	Y = new JoystickButton(xbox, 4);
+	LB = new JoystickButton(xbox, 5);
+	RB = new JoystickButton(xbox, 6);
 
-	b5->WhileHeld(new ForkRotateLeft());
-	b6->WhileHeld(new ForkRotateRight());
-
+	A->WhileHeld(new PullCrateIn());
+	B->WhileHeld(new PushCrateOut());
+	b5->WhileHeld(new ClimbUp());
+	b6->WhileHeld(new ClimbDown());
+	b3->WhileHeld(new ForkRotateLeft());
+	b4->WhileHeld(new ForkRotateRight());
+	b5->WhenPressed(new AutoBlue());
+	b6->WhenPressed(new AutoRed());
+	//b7->WhileHeld(new PullCrateIn());
+	//b8->WhileHeld(new PushCrateOut());
 }
 Joystick *OI::GetDriveJoy(){
 	return driveJoy;
+}
+Joystick *OI::GetXbox(){
+	return xbox;
 }
