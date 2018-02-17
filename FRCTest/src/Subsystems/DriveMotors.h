@@ -7,10 +7,8 @@ class DriveMotors : public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon *leftBack;
-	Talon *leftFront;
-	Talon *rightBack;
-	Talon *rightFront;
+	Talon *right;
+	Talon *left;
 	RobotDrive *drive;
 public:
 	DriveMotors();
@@ -18,6 +16,8 @@ public:
 	void DriveForward();
 	void Stop();
 	void DriveBackward();
+	void TurnLeft();
+	void TurnRight();
 	void ArcadeDrive(float x, float y);
 };
 

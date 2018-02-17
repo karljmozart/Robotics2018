@@ -35,5 +35,4 @@ void CommandBase::init() {
 	ClimbSys = new ClimbSystem();
 	Rotation = new RotateMotor();
 	Grabber = new GrabberWheels();
-
 }

@@ -14,6 +14,7 @@ public:
 	void InitDefaultCommand();
 	void RotateLeft();
 	void RotateRight();
+	void rotateValue(double);
 	void Stop();
 };
 

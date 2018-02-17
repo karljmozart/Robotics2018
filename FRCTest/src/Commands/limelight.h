@@ -15,9 +15,13 @@ struct limelightData{
 	std::shared_ptr<NetworkTable> limelighttable;
 	float targetOffsetAngle_Horizontal;
 	float targetOffsetAngle_Vertical;
+	float targetID;
 	float targetArea;
 	float targetSkew;
 	void log_all();
+	void lightOff();
+	void set_color_mode(int);
+	void table_update();
 };
 
 class limeLog : public CommandBase {
@@ -28,6 +32,7 @@ public:
 	bool IsFinished();
 	void End();
 	void Interrupted();
+
 	limelightData* limeData1;
 };
 

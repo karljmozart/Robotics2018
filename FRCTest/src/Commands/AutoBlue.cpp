@@ -4,7 +4,7 @@ limeBlue::limeBlue(){
 }
 
 void limeBlue::ledOff(){
-	limelighttable->PutNumber("ledMode", 1);
+	limelighttable->PutNumber("pipeline", 1);
 }
 AutoBlue::AutoBlue() {
 	// Use Requires() here to declare subsystem dependencies

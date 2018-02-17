@@ -19,10 +19,13 @@
 #include "Commands/AutoRed.h"
 #include "Commands/PushCrateOut.h"
 #include "Commands/PullCrateIn.h"
+#include "Commands/TimedDrive.h"
+#include "Commands/AutoCommand.h"
+#include "Commands/ForkRotateVar.h"
 
 OI::OI() {
 	// Process operator interface input here.
-	driveJoy= new Joystick(1);
+	driveJoy= new Joystick(5);
 	xbox = new Joystick(2);
  //joystick buttons
 	b1 = new JoystickButton(driveJoy, 1);
@@ -44,17 +47,27 @@ OI::OI() {
 	Y = new JoystickButton(xbox, 4);
 	LB = new JoystickButton(xbox, 5);
 	RB = new JoystickButton(xbox, 6);
+	L_MENU = new JoystickButton(xbox, 7);
+	R_MENU = new JoystickButton(xbox, 8);
+	L_DOWN = new JoystickButton(xbox, 9);
+	R_DOWN = new JoystickButton(xbox, 10);
+
+
+
 
 	A->WhileHeld(new PullCrateIn());
 	B->WhileHeld(new PushCrateOut());
+
+
 	b5->WhileHeld(new ClimbUp());
 	b6->WhileHeld(new ClimbDown());
-	b3->WhileHeld(new ForkRotateLeft());
-	b4->WhileHeld(new ForkRotateRight());
+	b3->WhileHeld(new ForkRotateRight());
+	b4->WhileHeld(new ForkRotateLeft());
 	b5->WhenPressed(new AutoBlue());
 	b6->WhenPressed(new AutoRed());
-	//b7->WhileHeld(new PullCrateIn());
-	//b8->WhileHeld(new PushCrateOut());
+	b12->WhileHeld(new AutoCommand());
+	b7->WhileHeld(new PullCrateIn());
+	b8->WhileHeld(new PushCrateOut());
 }
 Joystick *OI::GetDriveJoy(){
 	return driveJoy;

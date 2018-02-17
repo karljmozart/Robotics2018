@@ -14,7 +14,7 @@ private:
 	Joystick *driveJoy;
 	JoystickButton *b1, *b2, *b3, *b4, *b5, *b6, *b7, *b8, *b9, *b10, *b11, *b12;
 	Joystick *xbox;
-	JoystickButton *A, *B, *X, *Y, *RB, *LB;
+	JoystickButton *A, *B, *X, *Y, *RB, *LB, *L_MENU, *R_MENU, *L_DOWN, *R_DOWN;
 public:
 	OI();
 	Joystick *GetDriveJoy();

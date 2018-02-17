@@ -9,9 +9,27 @@
 limelightData::limelightData(){
 	limelighttable =  NetworkTable::GetTable("limelight");
 	targetOffsetAngle_Horizontal = limelighttable->GetNumber("tx",0);
+	targetID = limelighttable->GetNumber("tv", 0);
 	targetOffsetAngle_Vertical = limelighttable->GetNumber("ty",0);
 	targetArea = limelighttable->GetNumber("ta",0);
 	targetSkew = limelighttable->GetNumber("ts",0);
+}
+
+void limelightData::table_update(){
+	limelighttable =  NetworkTable::GetTable("limelight");
+	targetOffsetAngle_Horizontal = limelighttable->GetNumber("tx",0);
+	targetID = limelighttable->GetNumber("tv", 0);
+	targetOffsetAngle_Vertical = limelighttable->GetNumber("ty",0);
+	targetArea = limelighttable->GetNumber("ta",0);
+	targetSkew = limelighttable->GetNumber("ts",0);
+}
+
+void limelightData::lightOff(){
+	limelighttable->PutNumber("ledMode", 1);
+}
+
+void limelightData::set_color_mode(int mode){
+	limelighttable->PutNumber("ledMode", mode);
 }
 
 void limelightData::log_all(){

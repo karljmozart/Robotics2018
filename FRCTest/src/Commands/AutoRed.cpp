@@ -1,12 +1,13 @@
 #include "AutoRed.h"
+#include "WPILib.h"
 
 limeRed::limeRed(){
 	limelighttable = NetworkTable::GetTable("limelight");
 }
 
-void limeRed::ledOn(){
-	limelighttable->PutNumber("ledMode", 0);
-}
+//void limeRed::ledOn(){
+//	limelighttable->PutNumber("pipeline", 0);
+//}
 
 AutoRed::AutoRed() {
 	// Use Requires() here to declare subsystem dependencies
@@ -22,8 +23,9 @@ void AutoRed::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void AutoRed::Execute() {
 	limeRed* newInstance = new limeRed();
-	newInstance->ledOn();
+	//newInstance->ledOn();
 	delete newInstance;
+
 }
 
 // Make this return true when this Command no longer needs to run execute()

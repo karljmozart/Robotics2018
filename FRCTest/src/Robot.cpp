@@ -15,16 +15,19 @@
 #include <SmartDashboard/SmartDashboard.h>
 #include <TimedRobot.h>
 #include "CommandBase.h"
+#include <DriverStation.h>
 #include "WPILib.h"
 #include "Commands/AutoBlue.h"
+#include "Commands/AutoCommand.h"
 
 class Robot : public frc::TimedRobot {
 public:
 	void RobotInit() override {
 		CommandBase::init();
-		//m_chooser.AddDefault("Default Auto", &m_defaultAuto);
+		AutoCommand *a = new AutoCommand();
+		m_chooser.AddDefault("Default Auto", &m_defaultAuto);
 		//m_chooser.AddObject("My Auto", &m_myAuto);
-		//frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+		frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 	}
 
 	/**
@@ -58,9 +61,9 @@ public:
 		std::string autoSelected = frc::SmartDashboard::GetString(
 				"Auto Selector", "Default");
 		if (autoSelected == "My Auto") {
-			m_autonomousCommand = &m_myAuto;
+			//m_autonomousCommand = &m_myAuto;
 		} else {
-		//	m_autonomousCommand = &m_defaultAuto;
+			m_autonomousCommand = &m_defaultAuto;
 		}
 
 		m_autonomousCommand = m_chooser.GetSelected();
@@ -94,10 +97,10 @@ private:
 	// doesn't have undefined behavior and potentially crash.
 	Command *autonomousCommand;
 	frc::Command* m_autonomousCommand = nullptr;
-	//ExampleCommand m_defaultAuto;
-	AutoBlue m_myAuto;
+	AutoCommand m_defaultAuto;
+	//AutoCommand m_myAuto;
 	frc::SendableChooser<frc::Command*> m_chooser;
 };
 
 
-START_ROBOT_CLASS(Robot)
+START_ROBOT_CLASS(Robot) // @suppress("Invalid arguments")

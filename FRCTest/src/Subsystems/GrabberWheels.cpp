@@ -1,5 +1,7 @@
 #include "GrabberWheels.h"
 #include "../RobotMap.h"
+#include "../CommandBase.h"
+#include "Commands/PullCrateIn.h"
 
 GrabberWheels::GrabberWheels() : Subsystem("GrabberWheels") {
 	grabber = new Talon(FORKGRABBER);
@@ -8,10 +10,11 @@ GrabberWheels::GrabberWheels() : Subsystem("GrabberWheels") {
 void GrabberWheels::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
+
 }
 
 void GrabberWheels::PullIn(){
-	grabber->Set(1);
+	grabber->Set(0.5);
 }
 
 void GrabberWheels::PushOut(){

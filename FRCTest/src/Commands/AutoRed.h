@@ -6,7 +6,6 @@
 struct limeRed {
 	limeRed();
 	std::shared_ptr<NetworkTable> limelighttable;
-	void ledOn();
 };
 
 class AutoRed : public CommandBase {
